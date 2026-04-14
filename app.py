@@ -4,11 +4,12 @@ from pydantic import BaseModel, Field, computed_field
 from typing import Literal, Annotated
 import pickle
 import pandas as pd
+
 #import the ml model
 with open('model.pkl','rb') as f:
     model=pickle.load(f)
 
-app=FastAPI()
+app=FastAPI() #fastapi app object
 
 tier_1_cities = ["Mumbai", "Delhi", "Bangalore", "Chennai", "Kolkata", "Hyderabad", "Pune"]
 tier_2_cities = [
